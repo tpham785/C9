@@ -1,0 +1,31 @@
+<h1>Kite Flying Conditions for Warner Robins</h1>
+
+<h1>Windspeed(mph) <%= parsedData["windspd_mph"] %></h1> 
+
+<% if(parsedData["windspd_mph"] > 20){ %>
+    <h3>It's too dangerous to fly a kite</h3>
+<% }else if(parsedData["windspd_mph"] < 20 && parsedData["windspd_mph"] > 10){ %>
+        <h3>The wind speed is good to fly a kite</dxh3>
+<% }else{ %>
+        <h3>There's not enough wind to fly a kite</h3>
+<% } %>
+
+<h1>Temperature(Farenheit) <%= parsedData["temp_f"] %></h1> 
+
+<% if(parsedData["temp_f"] > 85 ){ %>
+    <h3>It's too hot to fly a kite</h3>
+<% }else if(parsedData["temp_f"] < 85 && parsedData["temp_f"] > 65){ %>
+        <h3>The temperature is just right to fly a kite</h3>
+<% }else{ %>
+        <h3>It's too cold to fly a kite</h3>
+<% } %>
+
+<h1>Cloud Coverage(%) <%= parsedData["cloudtotal_pct"] %></h1> 
+
+<% if(parsedData["cloudtotal_pct"] > 80 ){ %>
+    <h3>It's too cloudy to fly a kite</h3>
+<% }else if(parsedData["cloudtotal_pct"] < 80 && parsedData["cloudtotal_pct"] > 40){ %>
+        <h3>The cloudy coverage is just right to fly a kite</h3>
+<% }else{ %>
+        <h3>It's too sunny to fly a kite</h3>
+<% } %>

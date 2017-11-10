@@ -1,0 +1,39 @@
+<% include ../partials/header %> 
+
+<!--Create a navbar-->
+
+<div class="container">
+    <header class="jumbotron">
+        <div class="container">
+            <h1>Welcome to YelpCamp!</h1>
+            <p>View our hand-picked campgrounds from all over the world</p>
+            <p>
+                <a class="btn btn-primary btn-lg" href="/campgrounds/new">Add New Campground</a>
+            </p>
+        </div>
+    </header>
+    
+    <!----Everything in the grid must go in a row-->
+    <!----inside the row, for each campground, make a  class that has a column class and a column width-->
+    
+    <!--use the flex to have the grid still in line despite varying img sizes-->
+    <div class="row text-center" style="display:flex; flex-wrap:wrap">
+         <% campgrounds.forEach(function(campground){ %>
+         <!--adjusts the picture image based on the screen size 4 across, then 2, then defaults to 1-->
+            <div class="col-md-3 col-sm-6"> 
+                    <div class="thumbnail">
+                        <img src="<%= campground.image %>"> 
+                        <div class="caption">
+                            <h4><%=campground.name%></h4>
+                        </div>
+                        <p>
+                            <!--Use the id to create the link-->
+                            <a href="/campgrounds/<%= campground._id%>" class="btn btn-primary">More Info</a>
+                        </p>
+                    </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+<% include ../partials/footer %> 

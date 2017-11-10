@@ -1,0 +1,33 @@
+<% include ../partials/header %>
+
+
+<div class="container">
+    <div class="row">
+        <h1 style="text-align: center;">Edit <%=campground.name%></h1>
+        <!--how to stack login and signup on top of each other-->
+        <!--Fix the huge button by putting it all inside of a container-->
+            <div style="width: 30%; margin: 25px auto;">
+                <form action="/campgrounds/<%=campground._id%>?_method=PUT" method="POST">
+                    <div class ="form-group">
+                         <input class="form-control" type="text" name="campground[name]" value="<%=campground.name%>"> 
+                    </div>
+                    <div class ="form-group">
+                         <input class="form-control" type="text" name="campground[image]" value="<%=campground.image%>"> <!--name is how we reference it later in the res.object in the .js file-->
+                    </div>
+                    <div class ="form-group">
+                         <input class="form-control" type="text" name="campground[description]" value="<%=campground.description%>"> <!--name is how we reference it later in the res.object in the .js file-->
+                    </div>
+                    <div class ="form-group">
+                        <button class="btn btn-lg btn-primary btn-block">Submit!</button>
+                    </div>
+                </form> 
+                <a href="/campgrounds">Go Back</a>
+            </div>
+        
+        
+    </div>
+</div>
+
+
+<% include ../partials/footer %>
+
